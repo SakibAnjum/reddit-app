@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reddits</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>
+        Category
+      </ion-label>
+      <ion-select (ionChange)="changeCat()" [(ngModel)]="category" name="category">
+        <ion-option value="sports">Sports</ion-option>
+        <ion-option value="food">Food</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item.data)">
+      <h2>{{item.data.title}}</h2>
+      <ion-thumbnail item-left *ngIf="item.data.thumbnail">
+        <img src="{{item.data.thumbnail}}" alt="">
+      </ion-thumbnail>
+      <p>
+        <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>
+        <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
