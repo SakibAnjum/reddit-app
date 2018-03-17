@@ -47,4 +47,17 @@ export class RedditsPage {
     this.getPosts(this.category,this.limit);
   }
 
+  doRefresh(event){
+    setTimeout(() => {
+      this.changeCat();
+      event.complete();
+    }, 1000);
+
+  }
+
+  pull(e) {
+    let pullIcon = <HTMLElement>document.querySelector('.refresher-pulling-icon .icon');
+    pullIcon.style.transform = 'rotate(' + e.progress * 100 + 'deg)';
+
+  }
 }
