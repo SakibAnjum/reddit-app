@@ -10,7 +10,7 @@ export class RedditService{
 
   constructor(http: Http){
     this.http = http;
-    this.baseUrl = "http://www.reddit.com/r";
+    this.baseUrl = "https://www.reddit.com/r";
   }
 
 

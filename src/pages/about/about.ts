@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AboutPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -14,12 +9,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'about.html',
 })
 export class AboutPage {
-
+  public clickDisable:boolean=false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.clickDelay();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AboutPage');
+
+
+  clickDelay(){
+    let self = this
+    setInterval(function () {
+      self.clickDisable=true;
+      console.log(self.clickDisable)
+    },2000)
   }
 
+  clickInterval(){
+    console.log(this.clickDisable)
+    if(this.clickDisable){
+      console.log("clicked");
+      this.clickDisable=false;
+    }else {
+      console.log("not clicked")
+    }
+  }
 }

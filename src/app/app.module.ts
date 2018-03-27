@@ -7,6 +7,7 @@ import { Http,HttpModule} from '@angular/http'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {RedditService} from "../services/reddit.service";
+import {Network} from "@ionic-native/network";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {RedditService} from "../services/reddit.service";
     StatusBar,
     SplashScreen,
     RedditService,
+    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
